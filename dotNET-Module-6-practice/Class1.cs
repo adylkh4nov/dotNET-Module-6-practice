@@ -20,9 +20,9 @@ namespace dotNET_Module_6_practice
             {
                 
                 private string accountNumber;
-                private double initialBalance;
+                private decimal initialBalance;
 
-                public Account openAccount(Client client, double initialBalance)
+                public Account openAccount(Client client, decimal initialBalance)
                 {
                     string accountNumber = Guid.NewGuid().ToString();
                     
@@ -71,14 +71,14 @@ namespace dotNET_Module_6_practice
 
             public class Account
             {
-                public double Balance { get; private set; }
+                public decimal Balance { get; private set; }
 
-                public Account(string accountNumber, double initialBalance)
+                public Account(string accountNumber, decimal initialBalance)
                 {
                     Balance = initialBalance;
                 }
 
-                public void Deposit(double amount)
+                public void Deposit(decimal amount)
                 {
                     if (amount > 0)
                     {
@@ -91,7 +91,7 @@ namespace dotNET_Module_6_practice
                     }
                 }
 
-                public bool Withdraw(double amount)
+                public bool Withdraw(decimal amount)
                 {
                     if (amount > 0 && Balance >= amount)
                     {

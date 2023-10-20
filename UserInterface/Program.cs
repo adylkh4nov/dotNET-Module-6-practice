@@ -47,9 +47,9 @@ namespace UserInterface
             // Создаем клиента и открываем счет
             Client client = new Client(name, pass);
             Console.WriteLine("Введите начальный баланс:");
-            double initialBalance;
+            decimal initialBalance;
 
-            while(!double.TryParse(Console.ReadLine(),out initialBalance))
+            while(!decimal.TryParse(Console.ReadLine(),out initialBalance))
             {
                 Console.WriteLine("Введите число");
             }
@@ -129,12 +129,12 @@ namespace UserInterface
                         break;
                     case 'b':
                         Console.Write("Введите сумму для пополнения: ");
-                        double depositAmount = double.Parse(Console.ReadLine());
+                        decimal depositAmount = decimal.Parse(Console.ReadLine());
                         client.Account.Deposit(depositAmount);
                         break;
                     case 'c':
                         Console.Write("Введите сумму для снятия: ");
-                        double withdrawAmount = double.Parse(Console.ReadLine());
+                        decimal withdrawAmount = decimal.Parse(Console.ReadLine());
                         if (client.Account.Withdraw(withdrawAmount))
                         {
                             Console.WriteLine($"Сумма {withdrawAmount} снята со счета.");
